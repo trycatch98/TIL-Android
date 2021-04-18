@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "717819411577",
+    "project_id": "tilapp-7c3a1",
+    "storage_bucket": "tilapp-7c3a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717819411577:android:305654394194a74bd6e8a8",
+        "android_client_info": {
+          "package_name": "com.trycatch.til"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717819411577-422u7ja74et5larudq1pcji36qh87kpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhhvbRbPuFvz0UPu2yQlFgKXUy236tIpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717819411577-422u7ja74et5larudq1pcji36qh87kpq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "717819411577-vlqb0li9470556bp6ur0lfr8fimdbsm0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.trycatch.til"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
