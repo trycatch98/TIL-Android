@@ -14,10 +14,8 @@ class LoginViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _loginEvent: MutableLiveData<Unit> = MutableLiveData()
-    val loginEvent: LiveData<Event<AuthStatus>> = _loginEvent.switchMap {
-        loginRepository.login().map {
-            Event(it)
-        }
+    val loginEvent: LiveData<Event<Unit>> = _loginEvent.map {
+        Event(it)
     }
 
     fun login() {
