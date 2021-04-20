@@ -51,4 +51,8 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentMainBinding>(
             }
         }
     }
+
+    override fun onReturnToPreviousScreen() {
+        requireActivity().finish()
+    }
 }
