@@ -1,5 +1,6 @@
 package com.trycatch.til.di
 
+import com.trycatch.til.repository.PostRepository
 import com.trycatch.til.repository.UserAuthRepository
 import dagger.Module
 import dagger.Provides
@@ -11,5 +12,8 @@ import dagger.hilt.components.SingletonComponent
 object RepositoryModule {
 
     @Provides
-    fun provideLoginRepository() = UserAuthRepository()
+    fun provideUserAuthRepository() = UserAuthRepository()
+
+    @Provides
+    fun providePostRepository() = PostRepository()
 }
