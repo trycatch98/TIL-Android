@@ -12,8 +12,11 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>(
 ) {
     override val viewModel by viewModels<MainViewModel>()
 
+    private val postAdapter: PostAdapter = PostAdapter()
+
     override fun initView() {
         super.initView()
+        binding.postList.adapter = postAdapter
     }
 
     override fun initObserve() {
@@ -22,6 +25,10 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>(
         viewModel.isLogin.observe(this) {
             if (!it)
                 navController.navigate(R.id.loginFragment)
+        }
+
+        viewModel.posts.observe(this) {
+            postAdapter.submitList(it)
         }
     }
 
