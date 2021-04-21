@@ -14,4 +14,8 @@ class UserAuthRepository {
     fun logout() {
         firebaseAuth.signOut()
     }
+
+    fun getUserID(): Flow<String> = flow {
+        emit(firebaseAuth.currentUser?.email!!)
+    }
 }
