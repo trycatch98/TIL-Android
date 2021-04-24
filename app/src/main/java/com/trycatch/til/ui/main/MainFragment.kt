@@ -30,6 +30,12 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>(
         viewModel.posts.observe(this) {
             postAdapter.submitList(it)
         }
+
+        viewModel.writeEvent.observe(this) {
+            it.getContentIfNotHandled()?.let {
+                navController.navigate(R.id.action_mainFragment_to_postFragment)
+            }
+        }
     }
 
     override fun onReturnToPreviousScreen() {
