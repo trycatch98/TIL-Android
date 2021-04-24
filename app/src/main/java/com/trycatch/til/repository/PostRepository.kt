@@ -42,8 +42,6 @@ class PostRepository {
             .document(userID)
             .collection("posts")
             .add(post)
-            .addOnSuccessListener {}
-            .addOnFailureListener {}
     }
 
     fun updatePost(userID: String, postID: String, post: PostDTO) {
@@ -52,8 +50,6 @@ class PostRepository {
             .collection("posts")
             .document(postID)
             .set(post)
-            .addOnSuccessListener {}
-            .addOnFailureListener {}
     }
 
     fun deletePost(userID: String, postID: String) {
@@ -62,7 +58,5 @@ class PostRepository {
             .collection("posts")
             .document(postID)
             .delete()
-            .addOnSuccessListener {}
-            .addOnFailureListener {}
     }
 }
