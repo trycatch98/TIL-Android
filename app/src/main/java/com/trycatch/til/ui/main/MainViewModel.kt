@@ -3,6 +3,7 @@ package com.trycatch.til.ui.main
 import androidx.lifecycle.*
 import com.trycatch.til.repository.PostRepository
 import com.trycatch.til.repository.UserAuthRepository
+import com.trycatch.til.ui.base.BaseViewModel
 import com.trycatch.til.util.Event
 import com.trycatch.til.vo.Post
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -10,12 +11,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val userAuthRepository: UserAuthRepository,
+    userAuthRepository: UserAuthRepository,
     private val postRepository: PostRepository
-) : ViewModel() {
-    val isLogin: LiveData<Boolean> = userAuthRepository.isLogin().asLiveData()
+) : BaseViewModel(userAuthRepository) {
 
-    val posts: LiveData<List<Post>> = userAuthRepository.getUserID().asLiveData().switchMap {
+    val posts: LiveData<List<Post>> = userID.switchMap {
         postRepository.getPosts(it).asLiveData()
     }
 
