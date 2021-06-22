@@ -7,9 +7,9 @@ import com.trycatch.til.repository.UserAuthRepository
 import javax.inject.Inject
 
 open class BaseViewModel @Inject constructor(
-    userAuthRepository: UserAuthRepository
+    private val userAuthRepository: UserAuthRepository
 ) : ViewModel() {
-    val isLogin: LiveData<Boolean> = userAuthRepository.isLogin().asLiveData()
+    val isLogin: LiveData<Boolean> get() = userAuthRepository.isLogin().asLiveData()
 
-    val userID: LiveData<String> = userAuthRepository.getUserID().asLiveData()
+    val userID: LiveData<String> get() = userAuthRepository.getUserID().asLiveData()
 }

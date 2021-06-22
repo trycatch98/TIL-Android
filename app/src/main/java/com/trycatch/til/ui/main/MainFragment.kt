@@ -1,5 +1,6 @@
 package com.trycatch.til.ui.main
 
+import android.os.Bundle
 import androidx.fragment.app.viewModels
 import com.trycatch.til.R
 import com.trycatch.til.databinding.FragmentMainBinding
@@ -14,21 +15,20 @@ class MainFragment : BaseFragment<MainViewModel, FragmentMainBinding>(
 
     private val postAdapter: PostAdapter = PostAdapter()
 
-    override fun initView() {
-        super.initView()
+    override fun initView(savedInstanceState: Bundle?) {
+        super.initView(savedInstanceState)
         binding.postList.adapter = postAdapter
     }
 
-    override fun initObserve() {
-        super.initObserve()
+    override fun initObserve(savedInstanceState: Bundle?) {
+        super.initObserve(savedInstanceState)
 
-        viewModel.isLogin.observe(this) {
-            if (!it)
-                navController.navigate(R.id.loginFragment)
-        }
-
-        viewModel.posts.observe(this) {
-            postAdapter.submitList(it)
+        viewModel.isLogin.observe(this) { isLogin ->
+            if (isLogin) {
+                viewModel.posts.observe(this) { posts ->
+                    postAdapter.submitList(posts)
+                }
+            }
         }
 
         viewModel.writeEvent.observe(this) {

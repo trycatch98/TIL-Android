@@ -19,11 +19,7 @@
         android:id="@+id/loginFragment"
         android:name="com.trycatch.til.ui.login.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_login"/>
 
     <fragment
         android:id="@+id/postFragment"

@@ -49,13 +49,13 @@ abstract class BaseFragment<VM : ViewModel, B : ViewDataBinding>(
 
         navController = findNavController()
 
-        initView()
-        initObserve()
+        initView(savedInstanceState)
+        initObserve(savedInstanceState)
     }
 
-    protected open fun initView() {}
+    protected open fun initView(savedInstanceState: Bundle?) {}
 
-    protected open fun initObserve() {}
+    protected open fun initObserve(savedInstanceState: Bundle?) {}
 
     protected open fun onBackPressed() {
         onReturnToPreviousScreen()
