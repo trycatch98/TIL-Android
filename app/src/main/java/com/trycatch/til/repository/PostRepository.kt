@@ -3,6 +3,7 @@ package com.trycatch.til.repository
 import android.text.format.DateUtils
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.trycatch.til.dto.PostDTO
@@ -31,7 +32,7 @@ class PostRepository {
             close(e)
         }
 
-        val subscription = eventCollection?.addSnapshotListener { value, error ->
+        val subscription = eventCollection?.orderBy("date", Query.Direction.DESCENDING)?.addSnapshotListener { value, error ->
             if (error != null)
                 return@addSnapshotListener
 
