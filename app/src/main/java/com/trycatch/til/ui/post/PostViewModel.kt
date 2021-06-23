@@ -7,6 +7,7 @@ import com.trycatch.til.repository.UserAuthRepository
 import com.trycatch.til.ui.base.BaseViewModel
 import com.trycatch.til.util.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
+import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
@@ -25,7 +26,7 @@ class PostViewModel @Inject constructor(
                         it,
                         PostDTO(
                                 content.value!!,
-                                Date().toString(),
+                                SimpleDateFormat("yyyy.MM.dd HH:mm:ss", Locale.KOREAN).format(Calendar.getInstance().time),
                                 listOf()
                         )
                 )
