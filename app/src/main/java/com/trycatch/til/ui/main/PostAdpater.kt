@@ -1,5 +1,6 @@
 package com.trycatch.til.ui.main
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.trycatch.til.databinding.ItemPostBinding
 import com.trycatch.til.vo.Post
 
-class PostAdapter : ListAdapter<Post, PostAdapter.PostViewHolder>(DiffCallback()) {
+class PostAdapter(val userProfileImage: Uri) : ListAdapter<Post, PostAdapter.PostViewHolder>(DiffCallback()) {
 
     interface ItemClickListener {
         fun onClickItem(post: Post)
@@ -42,13 +43,12 @@ class PostAdapter : ListAdapter<Post, PostAdapter.PostViewHolder>(DiffCallback()
         }
     }
 
-    class PostViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class PostViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(post: Post, itemClickListener: ItemClickListener?) {
-            with(itemView) {
-                binding.post = post
-                setOnClickListener {
-                    itemClickListener?.onClickItem(post)
-                }
+            binding.post = post
+            binding.profile = userProfileImage
+            binding.menu.setOnClickListener {
+                itemClickListener?.onClickItem(post)
             }
         }
     }

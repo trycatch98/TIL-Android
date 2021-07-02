@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="nero">#191919</color>
+    <color name="dim_gray">#666666</color>
+    <color name="light_grey">#C8C8C8</color>
+    <color name="very_light_grey">#CCCCCC</color>
+    <color name="havelock_blue">#4987DA</color>
+    <color name="havelock_blue_30">#4D4987DA</color>
+    <color name="ghost_white">#F7F7F9</color>
+    <color name="summer_sky">#2B98E2</color>
+    <color name="flamingo">#EB5757</color>
+    <color name="midnight_express">#3D0A1334</color>
 </resources>

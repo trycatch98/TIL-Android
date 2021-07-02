@@ -1,5 +1,6 @@
 package com.trycatch.til.ui.base
 
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -12,4 +13,6 @@ open class BaseViewModel @Inject constructor(
     val isLogin: LiveData<Boolean> get() = userAuthRepository.isLogin().asLiveData()
 
     val userID: LiveData<String> get() = userAuthRepository.getUserID().asLiveData()
+
+    val userProfileImage: Uri get() = userAuthRepository.getUserProfileImage()
 }

@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="TextAppearance.TIL.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/notosanscjkkr_bold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.TIL.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/notosanscjkkr_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.TIL.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/notosanscjkkr_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="TextAppearance.TIL.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/notosanscjkkr_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+</resources>

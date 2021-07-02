@@ -1,5 +1,6 @@
 package com.trycatch.til.ui.main
 
+import android.net.Uri
 import androidx.lifecycle.*
 import com.trycatch.til.repository.PostRepository
 import com.trycatch.til.repository.UserAuthRepository

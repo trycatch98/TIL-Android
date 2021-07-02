@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_postFragment"
             app:destination="@id/postFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_mainBottomSheetDialog"
+            app:destination="@id/mainBottomSheetDialog" />
     </fragment>
 
     <fragment
@@ -26,4 +29,10 @@
         android:name="com.trycatch.til.ui.post.PostFragment"
         android:label="PostFragment"
         tools:layout="@layout/fragment_post" />
+
+    <dialog
+        android:id="@+id/mainBottomSheetDialog"
+        android:name="com.trycatch.til.ui.main.MainBottomSheetDialog"
+        android:label="MainBottomSheetDialog"
+        tools:layout="@layout/dialog_bottom_sheet_main" />
 </navigation>

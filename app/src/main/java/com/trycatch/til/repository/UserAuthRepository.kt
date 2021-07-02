@@ -16,6 +16,8 @@ class UserAuthRepository {
     }
 
     fun getUserID(): Flow<String> = flow {
-        emit(firebaseAuth.currentUser?.email!!)
+        emit(firebaseAuth.currentUser?.uid!!)
     }
+
+    fun getUserProfileImage() = firebaseAuth.currentUser?.photoUrl!!
 }
